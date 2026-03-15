@@ -83,7 +83,6 @@ t_error draw_line(const drawing_view_t &view, const point_t &p1, const point_t &
     return ERR_OK;
 }
 
-// Дописать условие rc
 t_error draw_lines(const drawing_view_t &view, const points_t &points, const edges_t &edges)
 {
     if (!view.scene)
