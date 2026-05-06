@@ -69,17 +69,17 @@ t_error file_read_model(model_t &model, FILE *file_in)
     }
 
     rc = calculate_center(model.center, model.points);
-    if (rc == ERR_OK)
+    if (rc != ERR_OK)
+    {
+        model_free(model);
+    }
+    else
     {
         rc = file_read_edges(model.edges, file_in);
         if (rc != ERR_OK)
         {
             free_points(model.points);
         }
-    }
-    else
-    {
-        model_free(model);
     }
 
     return rc;
