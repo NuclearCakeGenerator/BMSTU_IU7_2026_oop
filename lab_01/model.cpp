@@ -44,8 +44,13 @@ t_error model_load(model_t &model, const char *filename)
         fclose(file_in);
         if (rc == ERR_OK)
         {
-            model_free(model);
-            model = tmp_model;
+            rc = calculate_center(tmp_model.center, tmp_model.points);
+            if (rc == ERR_OK)
+            {
+                model_free(model);
+                model = tmp_model;
+            }
+            model_free(tmp_model);
         }
     }
 
@@ -63,17 +68,7 @@ t_error file_read_model(model_t &model, FILE *file_in)
     model_init(model);
 
     rc = file_read_points(model.points, file_in);
-    if (rc != ERR_OK)
-    {
-        return rc;
-    }
-
-    rc = calculate_center(model.center, model.points);
-    if (rc != ERR_OK)
-    {
-        model_free(model);
-    }
-    else
+    if (rc == ERR_OK)
     {
         rc = file_read_edges(model.edges, file_in);
         if (rc != ERR_OK)
