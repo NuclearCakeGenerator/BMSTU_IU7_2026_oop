@@ -22,7 +22,7 @@ void model_free(model_t &model)
     edges_free(model.edges);
 }
 
-t_error model_download(model_t &model, const char *filename)
+t_error model_load(model_t &model, const char *filename)
 {
     if (!filename)
     {

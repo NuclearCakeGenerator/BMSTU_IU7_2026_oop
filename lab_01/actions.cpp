@@ -15,7 +15,7 @@ t_error choose_option(request_t &request)
             rc = model_save(model, request.fname);
             break;
         case LOAD:
-            rc = model_download(model, request.fname);
+            rc = model_load(model, request.fname);
             break;
         case DRAW:
             rc = draw_model(model, request.view);

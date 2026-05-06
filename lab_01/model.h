@@ -19,7 +19,7 @@ void model_free(model_t &model);
 
 t_error file_read_model(model_t &model, FILE *file_in);
 
-t_error model_download(model_t &model, const char *filename);
+t_error model_load(model_t &model, const char *filename);
 
 t_error model_save(model_t &model, const char *filename);
 
