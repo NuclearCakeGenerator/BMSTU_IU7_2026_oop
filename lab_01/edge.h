@@ -6,8 +6,8 @@
 
 struct edge
 {
-    int start_ind;
-    int end_ind;
+    size_t start_ind;
+    size_t end_ind;
 };
 
 using edge_t = struct edge;

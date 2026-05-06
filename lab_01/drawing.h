@@ -28,7 +28,7 @@ t_error clear_scene(const drawing_view_t &view);
 
 t_error from_math_to_display(point_t &result, const point_t &point, const drawing_view_t &view);
 
-t_error get_points(line_t &line, const drawing_view_t &view, const edge_t &edge, const point_t *array_points, const int points_count);
+t_error get_points(line_t &line, const drawing_view_t &view, const edge_t &edge, const point_t *array_points, const size_t points_count);
 
 t_error draw_line(const drawing_view_t &view, const point_t &p1, const point_t &p2);
 

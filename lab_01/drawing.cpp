@@ -39,7 +39,7 @@ t_error from_math_to_display(point_t &result, const point_t &point, const drawin
     return rc;
 }
 
-t_error get_points(line_t &line, const drawing_view_t &view, const edge_t &edge, const point_t *array_points, int points_count)
+t_error get_points(line_t &line, const drawing_view_t &view, const edge_t &edge, const point_t *array_points, size_t points_count)
 {
     t_error rc = ERR_OK;
     

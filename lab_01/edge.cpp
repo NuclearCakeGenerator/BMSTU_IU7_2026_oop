@@ -9,7 +9,7 @@ t_error read_edge(edge_t &edge, FILE *file_in)
         return ERR_FILE_OPEN;
     }
     
-    if (fscanf(file_in, "%d %d", &edge.start_ind, &edge.end_ind) != 2)
+    if (fscanf(file_in, "%zu %zu", &edge.start_ind, &edge.end_ind) != 2)
     {
         rc = ERR_EDGES_FMT;
     }
@@ -25,7 +25,7 @@ t_error save_edge(FILE *fout, const edge_t &edge)
         return ERR_FILE_OUT;
     }
 
-    if (fprintf(fout, "%d %d\n", edge.start_ind, edge.end_ind) < 0)
+    if (fprintf(fout, "%zu %zu\n", edge.start_ind, edge.end_ind) < 0)
     {
         rc = ERR_FILE_OUT;
     }
